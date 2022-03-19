@@ -64,6 +64,7 @@ export const NavButtonHomeAndAbout = styled.nav<IAsideProps>`
        padding: .5rem;
        display: flex;
        align-items: center;
+       cursor: pointer;
    }
    span {
        width: calc(${props => props.width}/5);
@@ -136,6 +137,7 @@ export const PodcastList = styled.ul<IAsideProps>`
         justify-content: baseline;
         gap: 1rem;
         margin-bottom: 1rem;
+        cursor: pointer;
     }
     
     .skeleton > span {
