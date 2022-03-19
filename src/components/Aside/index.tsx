@@ -48,12 +48,17 @@ export const Aside = () => {
 
         <h3 style={{fontFamily: theme.fontFamily.primary}}>PODCAST</h3>
 
-        {isLoading && <h3>Carregando...</h3>}
 
       
         <NavPodcastList width={'12rem'}>
           <PodcastList width={'12rem'}>
 
+            {isLoading && Array(5).fill('skeleton').map(item => (
+              <li key = {item} className={item}>
+                <span></span>
+                <span></span>
+              </li>
+            ))}
             {data?.map(item => (
 
               <li key = {item.title} onClick = {() => navigate(item.title)}>
