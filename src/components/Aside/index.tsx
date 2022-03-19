@@ -1,13 +1,13 @@
-import { theme } from '../../style/theme';
-import { Icon } from '../Icon';
-import { NavButtonHomeAndAbout,NavPodcastList,PodcastList, WrapperAside, WrapperOutlet } from './style';
-import { useAsideHooks } from './hooks/useAsideHooks';
-import { useFetch } from '../../hooks/useFetch';
-import { Outlet } from 'react-router-dom';
+import { theme } from '../../style/theme'
+import { Icon } from '../Icon'
+import { NavButtonHomeAndAbout,NavPodcastList,PodcastList, WrapperAside, WrapperOutlet } from './style'
+import { useAsideHooks } from './hooks/useAsideHooks'
+import { useFetch } from '../../hooks/useFetch'
+import { Outlet } from 'react-router-dom'
 
 export const Aside = () => {
-  const {btnAbout,btnHome,handleBtnAbout,handleBtnHome, navigate} = useAsideHooks();
-  const {data, isLoading} = useFetch();
+  const {btnAbout,btnHome,handleBtnAbout,handleBtnHome, navigate} = useAsideHooks()
+  const {data, isLoading} = useFetch()
 
   return (
     <>
@@ -71,5 +71,5 @@ export const Aside = () => {
         <Outlet/>
       </WrapperOutlet>
     </>
-  );
-};
+  )
+}

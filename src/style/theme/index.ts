@@ -1,7 +1,7 @@
 export const theme = {
   size: {
     medium: '3rem',
-    small: '1.9rem'
+    small: '2rem'
   },
 
   color: {

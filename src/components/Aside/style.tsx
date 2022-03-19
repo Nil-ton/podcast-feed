@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { media } from '../../style/media';
-import { theme } from '../../style/theme';
-import { IAsideProps } from './types';
+import styled from 'styled-components'
+import { media } from '../../style/media'
+import { theme } from '../../style/theme'
+import { IAsideProps } from './types'
 
 
 export const WrapperOutlet = styled.div<IAsideProps>`
@@ -21,7 +21,7 @@ export const WrapperOutlet = styled.div<IAsideProps>`
     ${media.firstGen} {
         padding-left: calc(${props => props.width} - 7.5rem);
     }
-`;
+`
 
 export const WrapperAside = styled.aside<IAsideProps>`
     width: 100%;
@@ -56,7 +56,7 @@ export const WrapperAside = styled.aside<IAsideProps>`
     ${media.firstGen} {
         width: calc(${props => props.width} - 8rem);
     }
-`;
+`
 
 export const NavButtonHomeAndAbout = styled.nav<IAsideProps>`
     margin: 3rem 0;
@@ -111,7 +111,7 @@ export const NavButtonHomeAndAbout = styled.nav<IAsideProps>`
            padding: .5rem 1rem;
        }
    }
-`;
+`
 
 export const NavPodcastList = styled.nav<IAsideProps>`
     display: flex;
@@ -123,7 +123,7 @@ export const NavPodcastList = styled.nav<IAsideProps>`
     ${media.smartphone} {
         margin: 0;
     }
-    `;
+    `
 
 export const PodcastList = styled.ul<IAsideProps>`
     display: flex;
@@ -163,4 +163,4 @@ export const PodcastList = styled.ul<IAsideProps>`
             padding: .5rem 1rem;
         }
     }
-`;
+`
