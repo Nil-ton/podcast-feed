@@ -137,6 +137,30 @@ export const PodcastList = styled.ul<IAsideProps>`
         gap: 1rem;
         margin-bottom: 1rem;
     }
+    
+    .skeleton > span {
+        animation: skeleton-loading 1s linear infinite alternate;
+        background-color: hsl(200, 20%, 70%);
+        opacity: .7;
+    }
+
+    .skeleton > span:nth-child(1) {
+        width: ${theme.size.small}; 
+        height: ${theme.size.small};
+        border-radius: 50%;
+        padding: 1rem;
+    }
+
+    .skeleton > span:nth-child(n + 2) {
+        width: 5rem;
+        height: .5rem;
+    }
+    
+    @keyframes skeleton-loading {
+        to {
+            background-color: hsl(200, 20%, 95%);
+        }
+    }
 
     p {
         font-family: ${theme.fontFamily.primary};
