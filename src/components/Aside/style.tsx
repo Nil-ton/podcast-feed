@@ -188,5 +188,8 @@ export const PodcastList = styled.ul<IAsideProps>`
             margin: 0;
             padding: .5rem 1rem;
         }
+        .skeleton > span:nth-child(2) {
+            display: none;
+        }
     }
 `
