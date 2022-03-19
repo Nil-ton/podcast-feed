@@ -6,7 +6,7 @@ import { useFetch } from '../../hooks/useFetch'
 import { Outlet } from 'react-router-dom'
 
 export const Aside = () => {
-  const {btnAbout,btnHome,handleBtnAbout,handleBtnHome, navigate} = useAsideHooks()
+  const {btnAbout,btnHome,handleBtnAbout,handleBtnHome, handlePodcastNavigate} = useAsideHooks()
   const {data, isLoading} = useFetch()
 
   return (
@@ -61,7 +61,10 @@ export const Aside = () => {
             ))}
             {data?.map(item => (
 
-              <li key = {item.title} onClick = {() => navigate(item.title)}>
+              <li
+                key = {item.title}
+                onClick = {() => handlePodcastNavigate(item)}
+              >
                 <Icon size={theme.size.small} src = {item.image}/>
                 <p>{item.title === 'Matando Robôs Gigantes' ? 'MRG' : item.title}</p>
               </li>
