@@ -53,8 +53,8 @@ export const Aside = () => {
         <NavPodcastList width={'12rem'}>
           <PodcastList width={'12rem'}>
 
-            {isLoading && Array(5).fill('skeleton').map(item => (
-              <li key = {item} className={item}>
+            {isLoading && Array(5).fill('skeleton').map((item,i) => (
+              <li key = {i} className={item}>
                 <span></span>
                 <span></span>
               </li>
