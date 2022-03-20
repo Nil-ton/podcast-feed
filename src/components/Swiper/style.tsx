@@ -14,6 +14,7 @@ export const WrapperSwiper = styled.div<props>`
     background-position: 0% center;
     background-size: contain;
     position: relative;
+    
     div {
         position: absolute;
         display: flex;

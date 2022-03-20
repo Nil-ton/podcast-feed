@@ -1,21 +1,15 @@
 import { SwiperComponent } from '../../components/Swiper'
+import { WrapperHome } from './style'
 
 export const Home = () => {
   return (
-    <>
-      <div
-        style={{width: '300px', height: '500px', position: 'absolute', backgroundColor:'red',
-          right: '0',
-          top: 0
-        }}
-      >
+    <WrapperHome>
+      <div className='last-podcast'>
       </div>
-      {/* swapper react with imagens of podcast */}
-      <div>
+
+      <div className='swipper'>
         <SwiperComponent></SwiperComponent>
       </div>
-      {/* last podcast lançado */}
-
-    </>
+    </WrapperHome>
   )
 }
