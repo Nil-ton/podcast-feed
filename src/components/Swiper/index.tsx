@@ -6,6 +6,8 @@ export const SwiperComponent = () => {
   const {data} = useFetch()
   return (
     <Carousel 
+      centerMode = {true}
+      centerSlidePercentage = {101}
       autoPlay = {true}
       interval = {3000}
       showStatus = {false}
