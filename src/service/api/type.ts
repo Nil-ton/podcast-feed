@@ -9,5 +9,6 @@ export type IResponseApi = {
         duration: string;
         pubDate: string;
         enclosure: string;
+        image: string
     }[]
 }
