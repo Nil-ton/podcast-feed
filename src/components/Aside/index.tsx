@@ -1,83 +1,78 @@
-import { theme } from '../../style/theme'
-import { Icon } from '../Icon'
-import { NavButtonHomeAndAbout,NavPodcastList,PodcastList, WrapperAside, WrapperOutlet } from './style'
-import { useAsideHooks } from './hooks/useAsideHooks'
-import { useFetch } from '../../hooks/useFetch'
 import { Outlet } from 'react-router-dom'
+import { useFetch } from '../../hooks/useFetch'
+import { theme } from '../../style/theme'
+import { asideHooks } from './hooks/asideHooks'
+import { WrapperAside } from './style'
 
 export const Aside = () => {
-  const {btnAbout,btnHome,handleBtnAbout,handleBtnHome, handlePodcastNavigate} = useAsideHooks()
-  const {data, isLoading} = useFetch()
+  const {data} = useFetch()
+ 
+  const {actives} = asideHooks()
+
 
   return (
-    <>
-      <WrapperAside width={'12rem'}>
-        <div>
-          <Icon 
-            size={theme.size.medium}
-            src='https://i.pinimg.com/736x/f5/d9/8b/f5d98b3e305d45533bd32d558c70c5d9.jpg'
-          />
+    <WrapperAside>
+
+      <aside>
+
+        <div className='logo'>
+          <h2>Feed Podcast</h2>
         </div>
-     
-        <NavButtonHomeAndAbout width={'12rem'}>
+
+
+
+
+        {/* <div className='search'>
+          <input type="text" placeholder='Search'/>
+          <i className="fa-solid fa-magnifying-glass"></i>  
+        </div> */}
+
+
+        <div 
+          className='inicio'
+          onClick={actives[actives.length - 1].setActive}
+        >
+          <i
+            className="fa-solid fa-house-chimney" 
+            style = {{color: actives[actives.length - 1].active ? theme.color.button.primary : ''}}
+          ></i>
+          <a style={{color: actives[actives.length - 1].active ? 'white' : ''}}>Início</a>
+        </div>
+
+
+        <div className='label-podcast'>
+          <h2>PODCASTS</h2>
+        </div>
+
+
+
+        <nav className='icon'>
           <ul>
-            <li onClick={handleBtnHome}>
-              <span style={{display: btnHome ? 'inline-block' : 'none'}}></span>
-              <a
-                style={{color: btnHome? theme.color.font.primary : theme.color.font.secondary}}
-              >HOME</a>
-              <i 
-                className="fa-solid fa-house-chimney"
-                style={{color: btnHome? theme.color.button.primary : theme.color.font.secondary}}
-              />
-            </li>
-
-
-            <li onClick={handleBtnAbout}>
-              <span style={{display: btnAbout ? 'inline-block' : 'none'}}></span>
-              <a
-                style={{color:  btnAbout? theme.color.font.primary : theme.color.font.secondary}}
-              >ABOUT</a>
-              <i
-                className="fa-solid fa-address-card"
-                style={{color:  btnAbout? theme.color.button.primary : theme.color.font.secondary}}
-              />
-            </li>
-          </ul>
-        </NavButtonHomeAndAbout>
-
-        <h3 style={{fontFamily: theme.fontFamily.primary}}>PODCAST</h3>
-
-
-      
-        <NavPodcastList width={'12rem'}>
-          <PodcastList width={'12rem'}>
-
-            {isLoading && Array(5).fill('skeleton').map((item,i) => (
-              <li key = {i} className={item}>
-                <span></span>
-                <span></span>
-              </li>
-            ))}
-            {data?.map(item => (
-
+            {data?.map((pod,i) => (
               <li
-                key = {item.title}
-                onClick = {() => handlePodcastNavigate(item)}
+                key={pod.title}
+                style = {{borderLeft: actives[i].active ? `4px solid ${theme.color.button.primary}` : 'none'}}
+                onClick = {actives[i].setActive}
               >
-                <Icon size={theme.size.small} src = {item.image}/>
-                <p>{item.title === 'Matando Robôs Gigantes' ? 'MRG' : item.title}</p>
+                <img src={pod.image} alt= {`Icon do podcast ${pod.title}`} />
+                <p style={{color: actives[i].active ? 'white' : ''}}>
+                  {pod.title === 'Matando Robôs Gigantes' ? 'MRG' : pod.title}
+                </p>
               </li>
-
             ))}
+          </ul>
+        </nav>
 
-          </PodcastList>
-        </NavPodcastList>
-      </WrapperAside>
+      </aside>
 
-      <WrapperOutlet width={'12rem'}> 
+
+
+
+
+      <div className='outlet'>
         <Outlet/>
-      </WrapperOutlet>
-    </>
+      </div>
+
+    </WrapperAside>
   )
 }

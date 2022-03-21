@@ -6,14 +6,15 @@ export const theme = {
 
   color: {
     font: {
-      primary: 'black',
-      secondary: '#A6A7A9'
+      primary: 'white',
+      secondary: '#b3b3b3'
     },
     button: {
       primary: '#01AA6C'
     }
   },
   fontFamily: {
-    primary: '\'Roboto\', sans-serif'
+    primary: '\'Fira Code\', monospace',
+    secundary: '\'Press Start 2P\', cursive'
   }
-};
+}
