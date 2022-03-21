@@ -33,35 +33,11 @@ export const WrapperAside = styled.div`
         font-family: ${theme.fontFamily.secundary};
         font-size: 1rem;
         font-weight: 400;
+        padding-left: 1rem;
     }
 
 
-    .search {
-        margin: 1rem 0;
-        position: relative;
-    }
-
-    .search > input {
-        width: 100%;
-        margin-top: 1rem;
-        border-radius: 10px;
-        padding: .6rem;
-        padding-left: 2rem;
-        outline: none;
-        box-shadow: none;
-        border: none;
-        background-color: white;
-        color: black;
-    }
-
-    .search > i {
-        position: absolute;
-        color: black;
-        left: .5rem;
-        top: 1.5rem;
-    }
-
-
+    
 
 
     .inicio {
@@ -117,13 +93,39 @@ export const WrapperAside = styled.div`
 
 
 
+    .search {
+        margin: 1rem 0;
+        position: relative;
+    }
+
+    .search > input {
+        width: 100%;
+        margin-top: 1rem;
+        border-radius: 10px;
+        padding: .6rem;
+        padding-left: 2rem;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        background-color: white;
+        color: black;
+    }
+
+    .search > i {
+        position: absolute;
+        color: black;
+        left: .5rem;
+        top: 1.5rem;
+    }
+
+
 
 
 
 
     .outlet {
         grid-area: outlet;
-        padding: 2rem;
+        padding: .5rem 2rem;
         background-color: #121212;
         width: 100%;
         height: 100vh;

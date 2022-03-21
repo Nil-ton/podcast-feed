@@ -8,7 +8,7 @@ function RoutesComponent() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element = {<Aside />}>
-          <Route path='' element = {<Podcast/>}/>
+          <Route path='/:title' element = {<Podcast/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

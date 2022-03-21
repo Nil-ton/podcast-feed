@@ -1,3 +1,6 @@
+import { useParams } from 'react-router-dom'
+
 export const Podcast = () => {
-  return <div><h1>podcast</h1></div>
+  const {title} = useParams()
+  return <div><h1>{title}</h1></div>
 }
