@@ -7,12 +7,12 @@ type props = {
 }
 
 export const WrapperSwiper = styled.div<props>`
-    height: 500px;
+    height: 400px;
     width: 100%;
     background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,70%), rgba(0,0,0,100%)), url(${props => props.src});
-    background-repeat:round;
-    background-position: 0 center;
-    background-size: contain;
+    background-repeat: round;
+    background-position: center 0;
+    background-size: cover;
     position: relative;
     
     div {
