@@ -30,10 +30,10 @@ export const WrapperAside = styled.div`
     
     .logo > h2 {
         width: 50%;
-        font-family: ${theme.fontFamily.secundary};
-        font-size: 1rem;
-        font-weight: 400;
         padding-left: 1rem;
+        font-family: ${theme.fontFamily.secundary};
+        font-weight: 400;
+        font-size: 1rem;
     }
 
 
@@ -94,28 +94,28 @@ export const WrapperAside = styled.div`
 
 
     .search {
-        margin: 1rem 0;
         position: relative;
     }
 
     .search > input {
         width: 100%;
-        margin-top: 1rem;
         border-radius: 10px;
-        padding: .6rem;
-        padding-left: 2rem;
+        padding: .5rem;
+        padding-left: 2.5rem;
         outline: none;
         box-shadow: none;
         border: none;
-        background-color: white;
-        color: black;
+        background-color: black;
+        color: white;
+        font-family: ${theme.fontFamily.primary};
+        font-size: 1rem;
     }
 
     .search > i {
         position: absolute;
-        color: black;
+        color: ${theme.color.font.secondary};
         left: .5rem;
-        top: 1.5rem;
+        top: .7rem;
     }
 
 
@@ -125,7 +125,7 @@ export const WrapperAside = styled.div`
 
     .outlet {
         grid-area: outlet;
-        padding: .5rem 2rem;
+        padding: 1rem 2rem;
         background-color: #121212;
         width: 100%;
         height: 100vh;
